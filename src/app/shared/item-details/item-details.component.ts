@@ -8,11 +8,11 @@ import { FormGroup } from '@angular/forms';
 export class ItemDetailsComponent implements OnDestroy {
 
   public id: number;
-  protected display: boolean;
+  public display: boolean;
   protected user: User;
   private paramsSubscription: Subscription;
   public isFormSaved: boolean;
-  protected editForm: FormGroup;
+  public editForm: FormGroup;
   protected isCreatingNew: boolean;
 
   constructor(private _route: ActivatedRoute) { }
