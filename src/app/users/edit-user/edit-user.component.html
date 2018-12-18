@@ -1,0 +1,26 @@
+<p-sidebar [(visible)]="display" position="left" styleClass="sidebar" appendTo="body"  (onHide)="hideSlideBar()">
+  <form [formGroup]="editForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>*Name</label>
+      <input class="form-control" name="fname" formControlName="first_name" />
+      <div class="alert alert-danger" *ngIf="editForm.controls['first_name'].invalid && editForm.controls['first_name'].touched">
+        Incorrect name
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Last name</label>
+      <input class="form-control" name="lname" formControlName="last_name" />
+      <div class="alert alert-danger" *ngIf="editForm.controls['last_name'].invalid && editForm.controls['last_name'].touched">
+        Incorrect last name
+      </div>
+    </div>
+    <div class="form-group">
+      <button *ngIf="!isOpenDetails" type="submit" class="btn btn-primary" [disabled]="editForm.invalid">
+        Save
+      </button>
+      <button class="btn btn-danger" (click)="cancel()" pButton>
+        Cancel
+      </button>
+    </div>
+  </form>
+</p-sidebar>

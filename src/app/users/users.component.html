@@ -1,0 +1,21 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Name</th>
+              <th scope="col"><button type="button" class="btn btn-success btn-sm float-right" (click)="routerAdd('create')">Add</button></th>
+            </tr>
+          </thead>
+          <tbody>
+            <app-row-item *ngFor="let user of users" [user]="user" (userDeleted)="deleteUser($event)" class="row-table"></app-row-item>
+          </tbody>
+        </table>
+        {{test}}
+      </div>
+    </div>
+  </div>
+</section>
